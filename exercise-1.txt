@@ -1,0 +1,50 @@
+mysql> create table Adress(
+id int auto_increment primary key,
+entryId int, 
+type ENUM("home","work","other"),
+adressLine1 varchar(255),
+adressLine2 varchar(255),
+city varchar(255),
+province varchar(128),
+country varchar(128),
+postalCode varchar(10)
+
+create table ElectronicMail(
+id int auto_increment primary key,
+entryId int,
+type ENUM("home", "work", "other"),
+content varchar(255)
+);
+
+
+create table Phone(
+id int auto_increment primary key,
+type ENUM("home", "work", "other"),
+subtype ENUM("landline", "cellular", "fax"),
+content varchar(255)
+)
+
+create table Entry(
+id int auto_increment primary key,
+addressBookId int,
+firstName varchar(255),
+lastName varchar(255),
+birthday datetime,
+type ENUM("phone", "address", "electronic-mail")
+)
+
+create table AddressBook(
+id int auto_increment primary key,
+accountId int,
+name varchar(255),
+createdOn datetime,
+modifiedOn datetime
+)
+
+create table Account(
+id int auto_increment primary key,
+email varchar(255),
+password varchar(40),
+createdOn datetime,
+modifiedOn
+)
