@@ -1,0 +1,15 @@
+List all of the countries with respective occurence totals in DESC order
+
+mysql> select country,
+    -> count(*) as count
+    -> from Address 
+    -> group by country
+    -> having count(*) > 1
+    -> order by count
+    -> desc;
+
+
+Country names should all appear lowercase
+
+SELECT LCASE(country) AS Lower
+FROM Address;
