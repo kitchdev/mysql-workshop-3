@@ -1,0 +1,8 @@
+List all of the first names for AddressBook.name="Pharetra Ut Limited"
+
+SELECT Entry.firstName,
+AddressBook.name
+FROM Entry
+JOIN AddressBook 
+ON (AddressBook.id = Entry.addressBookId)
+WHERE AddressBook.name ='Pharetra Ut Limited';
